@@ -1,0 +1,635 @@
+{
+  "devices": [
+    {
+      "name": "AIH (Intermittent Hypoxia)",
+      "description": "Intermittent hypoxia delivered to enhance respiratory and possibly neurologic function prior to therapy.",
+      "details": ""
+    },
+    {
+      "name": "ARWell Pro",
+      "description": "A healthcare-focused augmented reality system that turns a tablet into an interactive therapy tool using augmented reality games and exercises without requiring wearable sensors or controllers.",
+      "details": ""
+    },
+    {
+      "name": "BalanceBelt",
+      "description": "The BalanceBelt is a lightweight device that helps patients with vestibular disorders or balance deficits. It delivers haptic feedback/gentle vibrations that signal body position and balance.",
+      "details": ""
+    },
+    {
+      "name": "Biomotum",
+      "description": "TBD",
+      "details": ""
+    },
+    {
+      "name": "BrainQ Technologies BQ3.0",
+      "description": "Non-invasive, low-intensity, low-frequency electromagnetic fields to stimulate neuroplasticity.",
+      "details": ""
+    },
+    {
+      "name": "Barrett Upper-Extremity Robot Trainer (BURT)",
+      "description": "TBD",
+      "details": ""
+    },
+    {
+      "name": "C-Brace",
+      "description": "TBD",
+      "details": ""
+    },
+    {
+      "name": "Cadence Shoe",
+      "description": "TBD",
+      "details": ""
+    },
+    {
+      "name": "Ekso GT/NR",
+      "description": "Robotic exoskeleton used in rehab settings to assist patients with neurological conditions with ambulation.",
+      "details": ""
+    },
+    {
+      "name": "Functional Electrical Stimulation",
+      "description": "TBD",
+      "details": "Examples include Cionic Neural Sleeve, Bioness L300, Hasomed RehaMove, TrainFES, and Schuhfried Medizintechnik Stimulator Rise."
+    },
+    {
+      "name": "Gloreha Sinfonia",
+      "description": "TBD",
+      "details": ""
+    },
+    {
+      "name": "Hypershell X",
+      "description": "TBD",
+      "details": ""
+    },
+    {
+      "name": "Idego by Ekso",
+      "description": "Powered lower-limb exoskeleton developed by Ekso Bionics to assist individuals with mobility impairments.",
+      "details": ""
+    },
+    {
+      "name": "Kinesix VR",
+      "description": "Medical virtual reality rehabilitation platform that combines Immersive VR environment, artificial intelligence (AI) to personalize exercise difficulty and progression, real-time movement tracking with a wide library of therapeutic exercises.",
+      "details": ""
+    },
+    {
+      "name": "Magnes Nushu",
+      "description": "NUSHU are sensor-embedded shoes that provide clinical-grade gait analysis and real-time biofeedback to help people with neurological gait disorders walk more confidently.",
+      "details": ""
+    },
+    {
+      "name": "Ottobock Exopulse Suit",
+      "description": "A full-body neuromodulation device that uses low-energy electrical stimulation to relax spastic muscles and activate weak ones through reciprocal inhibition.",
+      "details": ""
+    },
+    {
+      "name": "Powered Knee Ankle Foot Orthosis",
+      "description": "TBD",
+      "details": ""
+    },
+    {
+      "name": "ReWalk Restore",
+      "description": "TBD",
+      "details": ""
+    },
+    {
+      "name": "ReWalk by Lifeward",
+      "description": "TBD",
+      "details": ""
+    },
+    {
+      "name": "Transcutaneous Spinal Cord Stimulation",
+      "description": "A non-invasive neuromodulation technique that delivers mild electrical currents through the skin over the spine to activate spinal cord circuits.",
+      "details": ""
+    },
+    {
+      "name": "Transcutaneous Vagal Nerve Stimulation",
+      "description": "A non-invasive neuromodulation technique that stimulates the auricular branch of the vagus nerve through the skin using mild electrical pulses.",
+      "details": ""
+    },
+    {
+      "name": "WIM",
+      "description": "TBD",
+      "details": ""
+    },
+    {
+      "name": "Zeen",
+      "description": "TBD",
+      "details": ""
+    }
+  ],
+  "indications": [
+    {
+      "label": "Ambulation Goals",
+      "devices": [
+        "Biomotum",
+        "C-Brace",
+        "Cadence Shoe",
+        "Ekso GT/NR",
+        "Hypershell X",
+        "Idego by Ekso",
+        "Powered Knee Ankle Foot Orthosis",
+        "ReWalk Restore",
+        "ReWalk by Lifeward",
+        "WIM",
+        "Zeen"
+      ]
+    },
+    {
+      "label": "Balance",
+      "devices": [
+        "ARWell Pro",
+        "BalanceBelt",
+        "Kinesix VR"
+      ]
+    },
+    {
+      "label": "Bladder Control",
+      "devices": [
+        "Functional Electrical Stimulation"
+      ]
+    },
+    {
+      "label": "Cognition",
+      "devices": [
+        "ARWell Pro",
+        "Kinesix VR",
+        "Transcutaneous Vagal Nerve Stimulation"
+      ]
+    },
+    {
+      "label": "Coordination",
+      "devices": [
+        "ARWell Pro",
+        "Kinesix VR"
+      ]
+    },
+    {
+      "label": "Distal Weakness",
+      "devices": [
+        "Biomotum",
+        "Cadence Shoe",
+        "ReWalk Restore"
+      ]
+    },
+    {
+      "label": "Endurance",
+      "devices": [
+        "C-Brace",
+        "Ekso GT/NR",
+        "Idego by Ekso",
+        "Powered Knee Ankle Foot Orthosis",
+        "ReWalk by Lifeward",
+        "Zeen"
+      ]
+    },
+    {
+      "label": "Gait Analysis",
+      "devices": [
+        "Magnes Nushu"
+      ]
+    },
+    {
+      "label": "Hypertonia",
+      "devices": [
+        "Functional Electrical Stimulation",
+        "Ottobock Exopulse Suit"
+      ]
+    },
+    {
+      "label": "Mood and Emotional Regulation",
+      "devices": [
+        "Transcutaneous Vagal Nerve Stimulation"
+      ]
+    },
+    {
+      "label": "Neuromodulation",
+      "devices": [
+        "AIH (Intermittent Hypoxia)",
+        "BrainQ Technologies BQ3.0",
+        "Transcutaneous Spinal Cord Stimulation",
+        "Transcutaneous Vagal Nerve Stimulation"
+      ]
+    },
+    {
+      "label": "Pain",
+      "devices": [
+        "Functional Electrical Stimulation",
+        "Ottobock Exopulse Suit",
+        "Transcutaneous Vagal Nerve Stimulation"
+      ]
+    },
+    {
+      "label": "Pediatrics",
+      "devices": [
+        "ARWell Pro",
+        "Kinesix VR"
+      ]
+    },
+    {
+      "label": "Proprioception",
+      "devices": [
+        "BalanceBelt",
+        "Magnes Nushu"
+      ]
+    },
+    {
+      "label": "Proximal Weakness",
+      "devices": [
+        "Hypershell X",
+        "WIM"
+      ]
+    },
+    {
+      "label": "Speech",
+      "devices": [
+        "Transcutaneous Vagal Nerve Stimulation"
+      ]
+    },
+    {
+      "label": "Strengthening",
+      "devices": [
+        "Biomotum",
+        "C-Brace",
+        "Cadence Shoe",
+        "Ekso GT/NR",
+        "Functional Electrical Stimulation",
+        "Hypershell X",
+        "Idego by Ekso",
+        "Powered Knee Ankle Foot Orthosis",
+        "ReWalk Restore",
+        "ReWalk by Lifeward",
+        "WIM",
+        "Zeen"
+      ]
+    },
+    {
+      "label": "Upper Extremity",
+      "devices": [
+        "Barrett Upper-Extremity Robot Trainer (BURT)",
+        "Gloreha Sinfonia"
+      ]
+    },
+    {
+      "label": "Upright Tolerance",
+      "devices": [
+        "Ekso GT/NR",
+        "Idego by Ekso",
+        "ReWalk by Lifeward"
+      ]
+    },
+    {
+      "label": "Vestibular",
+      "devices": [
+        "ARWell Pro",
+        "BalanceBelt",
+        "Kinesix VR"
+      ]
+    }
+  ],
+  "contraindications": [
+    {
+      "label": "Absent Trunk Control"
+    },
+    {
+      "label": "Autonomic Instability"
+    },
+    {
+      "label": "Cancer"
+    },
+    {
+      "label": "Cardiac Conditions"
+    },
+    {
+      "label": "Cardiopulmonary Disease"
+    },
+    {
+      "label": "Cognitive Impairment"
+    },
+    {
+      "label": "Contractures"
+    },
+    {
+      "label": "Craniectomy"
+    },
+    {
+      "label": "DVT"
+    },
+    {
+      "label": "Hypertonicity"
+    },
+    {
+      "label": "Hypertonicity, MAS > 3"
+    },
+    {
+      "label": "Hypoxic Brain Injury"
+    },
+    {
+      "label": "Implanted Electronic Devices"
+    },
+    {
+      "label": "Infectious Disease / Fever"
+    },
+    {
+      "label": "Leg Length Discrepancy"
+    },
+    {
+      "label": "Metal Implants"
+    },
+    {
+      "label": "Open Wounds"
+    },
+    {
+      "label": "Osteoporosis"
+    },
+    {
+      "label": "Pain"
+    },
+    {
+      "label": "Peripheral Neuropathy"
+    },
+    {
+      "label": "Pregnancy"
+    },
+    {
+      "label": "Rashes or Skin Disease"
+    },
+    {
+      "label": "Seizure Disorder"
+    },
+    {
+      "label": "Seizures"
+    },
+    {
+      "label": "Severe Cognitive Impairment"
+    },
+    {
+      "label": "Significant Leg Length Discrepancy"
+    },
+    {
+      "label": "Skin Infection"
+    },
+    {
+      "label": "Sleep Apnea"
+    },
+    {
+      "label": "Stroke"
+    },
+    {
+      "label": "TBI"
+    },
+    {
+      "label": "Uncontrolled Hypertension"
+    },
+    {
+      "label": "Uncontrolled Seizures"
+    },
+    {
+      "label": "Urethane Allergy"
+    },
+    {
+      "label": "Ventilator / Electronic Life Support Devices"
+    },
+    {
+      "label": "Vision Impairment"
+    },
+    {
+      "label": "Weight > 220 lbs"
+    },
+    {
+      "label": "Weight > 250 lbs"
+    },
+    {
+      "label": "Weight > 275 lbs"
+    }
+  ],
+  "deviceProfiles": {
+    "AIH (Intermittent Hypoxia)": {
+      "absoluteContra": [
+        "Cardiopulmonary Disease",
+        "Hypoxic Brain Injury"
+      ],
+      "cautionaryContra": [
+        "Autonomic Instability",
+        "Cancer",
+        "Cardiac Conditions",
+        "Sleep Apnea",
+        "Stroke",
+        "TBI",
+        "Uncontrolled Hypertension"
+      ]
+    },
+    "ARWell Pro": {
+      "absoluteContra": [],
+      "cautionaryContra": [
+        "Seizure Disorder",
+        "Severe Cognitive Impairment",
+        "Vision Impairment"
+      ]
+    },
+    "BalanceBelt": {
+      "absoluteContra": [],
+      "cautionaryContra": []
+    },
+    "Biomotum": {
+      "absoluteContra": [
+        "Contractures",
+        "Hypertonicity"
+      ],
+      "cautionaryContra": []
+    },
+    "BrainQ Technologies BQ3.0": {
+      "absoluteContra": [
+        "Craniectomy",
+        "Implanted Electronic Devices",
+        "Seizures"
+      ],
+      "cautionaryContra": [
+        "Cancer"
+      ]
+    },
+    "Barrett Upper-Extremity Robot Trainer (BURT)": {
+      "absoluteContra": [
+        "Contractures",
+        "Hypertonicity"
+      ],
+      "cautionaryContra": [
+        "Open Wounds",
+        "Pain"
+      ]
+    },
+    "C-Brace": {
+      "absoluteContra": [
+        "Contractures",
+        "Hypertonicity",
+        "Weight > 275 lbs"
+      ],
+      "cautionaryContra": [
+        "Absent Trunk Control",
+        "Cognitive Impairment",
+        "Leg Length Discrepancy",
+        "Open Wounds"
+      ]
+    },
+    "Cadence Shoe": {
+      "absoluteContra": [],
+      "cautionaryContra": []
+    },
+    "Ekso GT/NR": {
+      "absoluteContra": [
+        "Hypertonicity, MAS > 3",
+        "Weight > 220 lbs"
+      ],
+      "cautionaryContra": [
+        "Contractures",
+        "Open Wounds",
+        "Osteoporosis",
+        "Pregnancy",
+        "Significant Leg Length Discrepancy"
+      ]
+    },
+    "Functional Electrical Stimulation": {
+      "absoluteContra": [
+        "Implanted Electronic Devices"
+      ],
+      "cautionaryContra": [
+        "Cancer",
+        "Cardiac Conditions",
+        "Metal Implants",
+        "Open Wounds",
+        "Pregnancy"
+      ]
+    },
+    "Gloreha Sinfonia": {
+      "absoluteContra": [
+        "Contractures",
+        "Hypertonicity"
+      ],
+      "cautionaryContra": [
+        "Open Wounds",
+        "Pain"
+      ]
+    },
+    "Hypershell X": {
+      "absoluteContra": [
+        "Contractures"
+      ],
+      "cautionaryContra": []
+    },
+    "Idego by Ekso": {
+      "absoluteContra": [
+        "Hypertonicity, MAS > 3"
+      ],
+      "cautionaryContra": [
+        "Absent Trunk Control",
+        "Contractures",
+        "Open Wounds",
+        "Osteoporosis",
+        "Pregnancy",
+        "Severe Cognitive Impairment"
+      ]
+    },
+    "Kinesix VR": {
+      "absoluteContra": [
+        "Seizures"
+      ],
+      "cautionaryContra": [
+        "Cognitive Impairment",
+        "Vision Impairment"
+      ]
+    },
+    "Magnes Nushu": {
+      "absoluteContra": [
+        "Open Wounds"
+      ],
+      "cautionaryContra": [
+        "Implanted Electronic Devices",
+        "Peripheral Neuropathy"
+      ]
+    },
+    "Ottobock Exopulse Suit": {
+      "absoluteContra": [
+        "Implanted Electronic Devices",
+        "Open Wounds",
+        "Pregnancy",
+        "Skin Infection",
+        "Ventilator / Electronic Life Support Devices"
+      ],
+      "cautionaryContra": [
+        "Cancer",
+        "Cardiac Conditions",
+        "Infectious Disease / Fever",
+        "Rashes or Skin Disease",
+        "Uncontrolled Seizures"
+      ]
+    },
+    "Powered Knee Ankle Foot Orthosis": {
+      "absoluteContra": [
+        "Contractures",
+        "Hypertonicity"
+      ],
+      "cautionaryContra": [
+        "Absent Trunk Control",
+        "Cognitive Impairment",
+        "Leg Length Discrepancy",
+        "Open Wounds"
+      ]
+    },
+    "ReWalk Restore": {
+      "absoluteContra": [
+        "Contractures",
+        "DVT",
+        "Urethane Allergy"
+      ],
+      "cautionaryContra": []
+    },
+    "ReWalk by Lifeward": {
+      "absoluteContra": [
+        "Hypertonicity, MAS > 3"
+      ],
+      "cautionaryContra": [
+        "Absent Trunk Control",
+        "Contractures",
+        "Open Wounds",
+        "Osteoporosis",
+        "Pregnancy",
+        "Severe Cognitive Impairment"
+      ]
+    },
+    "Transcutaneous Spinal Cord Stimulation": {
+      "absoluteContra": [
+        "Implanted Electronic Devices",
+        "Pregnancy"
+      ],
+      "cautionaryContra": [
+        "Cancer",
+        "Cardiac Conditions",
+        "Uncontrolled Seizures"
+      ]
+    },
+    "Transcutaneous Vagal Nerve Stimulation": {
+      "absoluteContra": [
+        "Implanted Electronic Devices",
+        "Pregnancy"
+      ],
+      "cautionaryContra": [
+        "Cancer",
+        "Cardiac Conditions"
+      ]
+    },
+    "WIM": {
+      "absoluteContra": [
+        "Contractures"
+      ],
+      "cautionaryContra": []
+    },
+    "Zeen": {
+      "absoluteContra": [
+        "Weight > 250 lbs"
+      ],
+      "cautionaryContra": [
+        "Absent Trunk Control",
+        "Cognitive Impairment",
+        "Osteoporosis"
+      ]
+    }
+  }
+}
