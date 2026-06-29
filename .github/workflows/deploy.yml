@@ -1,8 +1,14 @@
-name: Deploy Vite site to GitHub Pages
+name: Rebuild flowchart from data.json
 
 on:
   push:
     branches: ["main"]
+    paths:
+      - "data.json"          # only runs when data.json changes
+      - "src/**"             # or when source code changes
+      - "generate-data.js"
+
+  workflow_dispatch:         # also allows manual trigger from Actions tab
 
 permissions:
   contents: read
@@ -21,7 +27,12 @@ jobs:
           node-version: 22
 
       - run: npm install
-      - run: npm run build
+
+      - name: Regenerate App.jsx from data.json
+        run: node generate-data.js
+
+      - name: Build site
+        run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -30,11 +41,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
