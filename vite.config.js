@@ -5,4 +5,12 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   base: "/Tech-Immersion-Flowchart/",
   plugins: [react(), tailwindcss()],
+  publicDir: "public",
+  build: {
+    rollupOptions: {
+      input: {
+        main: "index.html",
+      },
+    },
+  },
 });
