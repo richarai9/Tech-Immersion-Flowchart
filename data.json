@@ -114,6 +114,11 @@
       "name": "Zeen",
       "description": "TBD",
       "details": ""
+    },
+    {
+      "name": "Test",
+      "description": "TBD",
+      "details": ""
     }
   ],
   "indications": [
@@ -399,6 +404,9 @@
     },
     {
       "label": "Weight > 275 lbs"
+    },
+    {
+      "label": "Test"
     }
   ],
   "deviceProfiles": {
@@ -630,6 +638,12 @@
         "Cognitive Impairment",
         "Osteoporosis"
       ]
+    },
+    "Test": {
+      "absoluteContra": [
+        "Test"
+      ],
+      "cautionaryContra": []
     }
   }
 }
