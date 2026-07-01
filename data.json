@@ -61,7 +61,7 @@
       "details": ""
     },
     {
-      "name": "Idego by Ekso",
+      "name": "Indego by Ekso",
       "description": "Powered lower-limb exoskeleton developed by Ekso Bionics to assist individuals with mobility impairments.",
       "details": ""
     },
@@ -114,11 +114,6 @@
       "name": "Zeen",
       "description": "TBD",
       "details": ""
-    },
-    {
-      "name": "Test",
-      "description": "TBD",
-      "details": ""
     }
   ],
   "indications": [
@@ -130,7 +125,7 @@
         "Cadence Shoe",
         "Ekso GT/NR",
         "Hypershell X",
-        "Idego by Ekso",
+        "Indego by Ekso",
         "Powered Knee Ankle Foot Orthosis",
         "ReWalk Restore",
         "ReWalk by Lifeward",
@@ -180,7 +175,7 @@
       "devices": [
         "C-Brace",
         "Ekso GT/NR",
-        "Idego by Ekso",
+        "Indego by Ekso",
         "Powered Knee Ankle Foot Orthosis",
         "ReWalk by Lifeward",
         "Zeen"
@@ -258,7 +253,7 @@
         "Ekso GT/NR",
         "Functional Electrical Stimulation",
         "Hypershell X",
-        "Idego by Ekso",
+        "Indego by Ekso",
         "Powered Knee Ankle Foot Orthosis",
         "ReWalk Restore",
         "ReWalk by Lifeward",
@@ -277,7 +272,7 @@
       "label": "Upright Tolerance",
       "devices": [
         "Ekso GT/NR",
-        "Idego by Ekso",
+        "Indego by Ekso",
         "ReWalk by Lifeward"
       ]
     },
@@ -287,12 +282,6 @@
         "ARWell Pro",
         "BalanceBelt",
         "Kinesix VR"
-      ]
-    },
-    {
-      "label": "Test Ind",
-      "devices": [
-        "Test"
       ]
     }
   ],
@@ -528,19 +517,6 @@
       ],
       "cautionaryContra": []
     },
-    "Idego by Ekso": {
-      "absoluteContra": [
-        "Hypertonicity, MAS > 3"
-      ],
-      "cautionaryContra": [
-        "Absent Trunk Control",
-        "Contractures",
-        "Open Wounds",
-        "Osteoporosis",
-        "Pregnancy",
-        "Severe Cognitive Impairment"
-      ]
-    },
     "Kinesix VR": {
       "absoluteContra": [
         "Seizures"
@@ -645,11 +621,18 @@
         "Osteoporosis"
       ]
     },
-    "Test": {
+    "Indego by Ekso": {
       "absoluteContra": [
-        "Test Contra"
+        "Hypertonicity, MAS > 3"
       ],
-      "cautionaryContra": []
+      "cautionaryContra": [
+        "Absent Trunk Control",
+        "Contractures",
+        "Open Wounds",
+        "Osteoporosis",
+        "Pregnancy",
+        "Severe Cognitive Impairment"
+      ]
     }
   }
 }
