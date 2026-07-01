@@ -114,11 +114,6 @@
       "name": "Zeen",
       "description": "TBD",
       "details": ""
-    },
-    {
-      "name": "Test",
-      "description": "TBD",
-      "details": ""
     }
   ],
   "indications": [
@@ -288,12 +283,6 @@
         "BalanceBelt",
         "Kinesix VR"
       ]
-    },
-    {
-      "label": "Test",
-      "devices": [
-        "Test"
-      ]
     }
   ],
   "contraindications": [
@@ -410,9 +399,6 @@
     },
     {
       "label": "Weight > 275 lbs"
-    },
-    {
-      "label": "Test"
     }
   ],
   "deviceProfiles": {
@@ -643,14 +629,6 @@
         "Absent Trunk Control",
         "Cognitive Impairment",
         "Osteoporosis"
-      ]
-    },
-    "Test": {
-      "absoluteContra": [
-        "Test"
-      ],
-      "cautionaryContra": [
-        "Uncontrolled Hypertension"
       ]
     }
   }
