@@ -288,6 +288,12 @@
         "BalanceBelt",
         "Kinesix VR"
       ]
+    },
+    {
+      "label": "Test",
+      "devices": [
+        "Test"
+      ]
     }
   ],
   "contraindications": [
@@ -404,6 +410,9 @@
     },
     {
       "label": "Weight > 275 lbs"
+    },
+    {
+      "label": "Test"
     }
   ],
   "deviceProfiles": {
@@ -637,8 +646,12 @@
       ]
     },
     "Test": {
-      "absoluteContra": [],
-      "cautionaryContra": []
+      "absoluteContra": [
+        "Test"
+      ],
+      "cautionaryContra": [
+        "Uncontrolled Hypertension"
+      ]
     }
   }
 }
