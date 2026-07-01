@@ -6,115 +6,56 @@
   <title>Tech Immersion – Data Admin</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --surface2: #f1f5f9;
-      --border: #e2e8f0;
-      --border-strong: #cbd5e1;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --text-faint: #94a3b8;
+      --bg: #f8fafc; --surface: #ffffff; --surface2: #f1f5f9;
+      --border: #e2e8f0; --border-strong: #cbd5e1;
+      --text: #0f172a; --text-muted: #64748b; --text-faint: #94a3b8;
       --accent: #1e293b;
-      --green: #16a34a;
-      --green-bg: #f0fdf4;
-      --green-border: #bbf7d0;
-      --red: #dc2626;
-      --red-bg: #fef2f2;
-      --red-border: #fecaca;
-      --orange: #ea580c;
-      --orange-bg: #fff7ed;
-      --orange-border: #fed7aa;
-      --blue: #2563eb;
-      --blue-bg: #eff6ff;
-      --blue-border: #bfdbfe;
-      --radius: 12px;
-      --radius-sm: 8px;
+      --green: #16a34a; --green-bg: #f0fdf4; --green-border: #bbf7d0;
+      --red: #dc2626; --red-bg: #fef2f2; --red-border: #fecaca;
+      --orange: #ea580c; --orange-bg: #fff7ed; --orange-border: #fed7aa;
+      --blue: #2563eb; --blue-bg: #eff6ff; --blue-border: #bfdbfe;
+      --radius: 12px; --radius-sm: 8px;
       --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
       --shadow-md: 0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.04);
     }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      font-size: 14px;
-      line-height: 1.5;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; font-size: 14px; line-height: 1.5; }
 
     /* ── Password gate ── */
-    #password-gate {
-      position: fixed; inset: 0; background: var(--accent);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 1000; flex-direction: column; gap: 24px;
-    }
+    #password-gate { position: fixed; inset: 0; background: var(--accent); display: flex; align-items: center; justify-content: center; z-index: 1000; }
     #password-gate.hidden { display: none; }
-    .gate-box {
-      background: white; border-radius: 20px; padding: 40px;
-      width: 100%; max-width: 380px; text-align: center;
-      box-shadow: 0 24px 48px rgba(0,0,0,.3);
-    }
-    .gate-title { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .gate-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
-    .gate-input {
-      width: 100%; padding: 12px 14px; border: 1px solid var(--border-strong);
-      border-radius: var(--radius-sm); font-size: 15px; text-align: center;
-      letter-spacing: 3px; outline: none; margin-bottom: 12px;
-    }
-    .gate-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(30,41,59,.1); }
-    .gate-btn {
-      width: 100%; padding: 12px; background: var(--accent); color: white;
-      border: none; border-radius: var(--radius-sm); font-size: 14px;
-      font-weight: 600; cursor: pointer; transition: opacity .15s;
-    }
+    .gate-box { background: white; border-radius: 20px; padding: 40px; width: 100%; max-width: 400px; box-shadow: 0 24px 48px rgba(0,0,0,.3); }
+    .gate-title { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 4px; text-align: center; }
+    .gate-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; text-align: center; }
+    .gate-label { font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px; margin-top: 12px; }
+    .gate-input { width: 100%; padding: 10px 12px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font-size: 14px; outline: none; margin-bottom: 4px; }
+    .gate-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(30,41,59,.08); }
+    .gate-hint { font-size: 11px; color: var(--text-faint); margin-bottom: 8px; line-height: 1.5; }
+    .gate-btn { width: 100%; padding: 12px; background: var(--accent); color: white; border: none; border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; cursor: pointer; margin-top: 16px; transition: opacity .15s; }
     .gate-btn:hover { opacity: .85; }
-    .gate-error { font-size: 12px; color: var(--red); margin-top: 8px; min-height: 16px; }
+    .gate-error { font-size: 12px; color: var(--red); margin-top: 8px; min-height: 16px; text-align: center; }
 
     /* ── Top bar ── */
-    .topbar {
-      background: var(--accent); color: #fff;
-      padding: 0 24px; height: 56px;
-      display: flex; align-items: center; justify-content: space-between;
-      position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 1px 0 rgba(255,255,255,.06);
-    }
-    .topbar-left { display: flex; align-items: center; gap: 12px; }
+    .topbar { background: var(--accent); color: #fff; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
     .topbar-logo { font-weight: 700; font-size: 15px; letter-spacing: -.3px; }
     .topbar-sub { font-size: 12px; color: #94a3b8; }
     .topbar-actions { display: flex; gap: 8px; }
 
     /* ── Publish modal ── */
-    #publish-modal {
-      position: fixed; inset: 0; background: rgba(0,0,0,.5);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 500; backdrop-filter: blur(2px);
-    }
+    #publish-modal { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; z-index: 500; backdrop-filter: blur(2px); }
     #publish-modal.hidden { display: none; }
-    .modal-box {
-      background: white; border-radius: 20px; padding: 32px;
-      width: 100%; max-width: 440px; box-shadow: var(--shadow-md);
-    }
+    .modal-box { background: white; border-radius: 20px; padding: 32px; width: 100%; max-width: 440px; box-shadow: var(--shadow-md); }
     .modal-title { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
     .modal-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
     .modal-actions { display: flex; gap: 8px; margin-top: 20px; }
-    .publish-status {
-      margin-top: 14px; padding: 10px 14px; border-radius: var(--radius-sm);
-      font-size: 13px; display: none;
-    }
+    .publish-status { margin-top: 14px; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; display: none; }
     .publish-status.show { display: block; }
     .publish-status.loading { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
     .publish-status.success { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
     .publish-status.error { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
 
     /* ── Buttons ── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 7px 14px; border-radius: var(--radius-sm);
-      font-size: 13px; font-weight: 500; cursor: pointer;
-      border: 1px solid transparent; transition: all .15s; line-height: 1;
-    }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 500; cursor: pointer; border: 1px solid transparent; transition: all .15s; line-height: 1; }
     .btn-primary { background: #fff; color: var(--accent); border-color: rgba(255,255,255,.2); }
     .btn-primary:hover { background: #f1f5f9; }
     .btn-ghost { background: transparent; color: #94a3b8; border-color: rgba(255,255,255,.1); }
@@ -133,41 +74,19 @@
 
     /* ── Layout ── */
     .layout { display: flex; height: calc(100vh - 56px); }
-    .sidebar {
-      width: 200px; flex-shrink: 0; background: var(--surface);
-      border-right: 1px solid var(--border); padding: 16px 8px;
-      display: flex; flex-direction: column; gap: 2px;
-    }
-    .nav-item {
-      display: flex; align-items: center; gap: 8px;
-      padding: 8px 12px; border-radius: var(--radius-sm);
-      cursor: pointer; font-size: 13px; font-weight: 500;
-      color: var(--text-muted); transition: all .12s;
-      border: none; background: none; width: 100%; text-align: left;
-    }
+    .sidebar { width: 200px; flex-shrink: 0; background: var(--surface); border-right: 1px solid var(--border); padding: 16px 8px; display: flex; flex-direction: column; gap: 2px; }
+    .nav-item { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: var(--radius-sm); cursor: pointer; font-size: 13px; font-weight: 500; color: var(--text-muted); transition: all .12s; border: none; background: none; width: 100%; text-align: left; }
     .nav-item:hover { background: var(--surface2); color: var(--text); }
     .nav-item.active { background: var(--accent); color: #fff; }
-    .nav-badge {
-      margin-left: auto; font-size: 11px; font-weight: 600;
-      background: var(--surface2); color: var(--text-muted);
-      padding: 1px 6px; border-radius: 99px;
-    }
+    .nav-badge { margin-left: auto; font-size: 11px; font-weight: 600; background: var(--surface2); color: var(--text-muted); padding: 1px 6px; border-radius: 99px; }
     .nav-item.active .nav-badge { background: rgba(255,255,255,.15); color: rgba(255,255,255,.7); }
     .main { flex: 1; overflow-y: auto; padding: 24px; }
 
-    /* ── Section header ── */
-    .section-header {
-      display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;
-    }
+    .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
     .section-title { font-size: 18px; font-weight: 700; letter-spacing: -.3px; }
     .section-desc { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
 
-    /* ── Cards ── */
-    .card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 16px;
-      box-shadow: var(--shadow); margin-bottom: 10px;
-    }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); margin-bottom: 10px; }
     .card-row { display: flex; align-items: flex-start; gap: 12px; }
     .card-body { flex: 1; min-width: 0; }
     .card-name { font-weight: 600; font-size: 14px; }
@@ -175,33 +94,17 @@
     .card-desc { font-size: 13px; color: var(--text-muted); margin-top: 6px; line-height: 1.6; }
     .card-actions { display: flex; gap: 6px; flex-shrink: 0; }
 
-    /* ── Forms ── */
-    input[type=text], input[type=password], textarea {
-      width: 100%; padding: 8px 11px;
-      border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
-      font-size: 13px; font-family: inherit; color: var(--text);
-      background: var(--surface); outline: none;
-      transition: border-color .15s, box-shadow .15s;
-    }
-    input[type=text]:focus, input[type=password]:focus, textarea:focus {
-      border-color: var(--accent); box-shadow: 0 0 0 3px rgba(30,41,59,.08);
-    }
+    input[type=text], input[type=password], textarea { width: 100%; padding: 8px 11px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font-size: 13px; font-family: inherit; color: var(--text); background: var(--surface); outline: none; transition: border-color .15s, box-shadow .15s; }
+    input[type=text]:focus, input[type=password]:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(30,41,59,.08); }
     textarea { resize: vertical; min-height: 72px; }
     label { font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px; }
     .form-row { margin-bottom: 12px; }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .edit-form {
-      background: var(--surface2); border: 1px solid var(--border);
-      border-radius: var(--radius-sm); padding: 14px; margin-top: 10px;
-    }
+    .edit-form { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; margin-top: 10px; }
     .edit-form-actions { display: flex; gap: 8px; margin-top: 12px; }
-    .add-card {
-      background: var(--surface); border: 2px dashed var(--border);
-      border-radius: var(--radius); padding: 16px; margin-bottom: 10px; display: none;
-    }
+    .add-card { background: var(--surface); border: 2px dashed var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 10px; display: none; }
     .add-card.open { display: block; }
 
-    /* ── Tags ── */
     .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
     .tag { font-size: 11px; padding: 2px 8px; border-radius: 99px; font-weight: 500; border: 1px solid; }
     .tag-blue { background: var(--blue-bg); color: var(--blue); border-color: var(--blue-border); }
@@ -209,75 +112,57 @@
     .tag-orange { background: var(--orange-bg); color: var(--orange); border-color: var(--orange-border); }
     .tag-gray { background: var(--surface2); color: var(--text-muted); border-color: var(--border); }
 
-    /* ── Multi-select ── */
-    .multi-select {
-      border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
-      background: var(--surface); max-height: 200px; overflow-y: auto;
-    }
+    .multi-select { border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface); max-height: 200px; overflow-y: auto; }
     .multi-select-search { padding: 8px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--surface); }
     .multi-select-search input { margin: 0; }
     .multi-select-list { padding: 4px; }
-    .ms-item {
-      display: flex; align-items: center; gap: 8px;
-      padding: 5px 8px; border-radius: 6px; cursor: pointer;
-      transition: background .1s; font-size: 13px;
-    }
+    .ms-item { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 6px; cursor: pointer; transition: background .1s; font-size: 13px; }
     .ms-item:hover { background: var(--surface2); }
     .ms-item input[type=checkbox] { width: 14px; height: 14px; flex-shrink: 0; accent-color: var(--accent); }
     .ms-item label { margin: 0; font-weight: 400; color: var(--text); cursor: pointer; font-size: 13px; }
     .ms-empty { padding: 12px 8px; color: var(--text-faint); font-size: 13px; text-align: center; }
 
-    /* ── Relationships ── */
     .contra-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
-    .contra-group-label {
-      font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase;
-      padding: 6px 8px; border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-    }
+    .contra-group-label { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; padding: 6px 8px; border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
     .contra-group-abs .contra-group-label { background: var(--red-bg); color: var(--red); }
     .contra-group-cau .contra-group-label { background: var(--orange-bg); color: var(--orange); }
 
-    /* ── Toast ── */
-    #toast {
-      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(16px);
-      background: var(--accent); color: #fff; padding: 10px 18px;
-      border-radius: 99px; font-size: 13px; font-weight: 500;
-      opacity: 0; transition: all .25s; pointer-events: none; z-index: 999;
-      box-shadow: var(--shadow-md);
-    }
+    #toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(16px); background: var(--accent); color: #fff; padding: 10px 18px; border-radius: 99px; font-size: 13px; font-weight: 500; opacity: 0; transition: all .25s; pointer-events: none; z-index: 999; box-shadow: var(--shadow-md); }
     #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-    /* ── Empty ── */
     .empty { text-align: center; padding: 48px 24px; color: var(--text-faint); font-size: 13px; }
     .empty-icon { font-size: 32px; margin-bottom: 8px; }
-
-    /* ── Tab panels ── */
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
-
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
+    ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: transparent; } ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
   </style>
 </head>
 <body>
 
-<!-- ── Password gate ── -->
+<!-- Password + Token gate -->
 <div id="password-gate">
   <div class="gate-box">
-    <div style="font-size:32px;margin-bottom:12px">🔒</div>
+    <div style="font-size:32px;margin-bottom:12px;text-align:center">🔒</div>
     <div class="gate-title">Tech Immersion Admin</div>
-    <div class="gate-sub">Enter the password to access the data editor.</div>
-    <input class="gate-input" type="password" id="gate-input" placeholder="Password" onkeydown="if(event.key==='Enter')checkPassword()" />
+    <div class="gate-sub">Enter your credentials to access the data editor.</div>
+
+    <label class="gate-label">Password</label>
+    <input class="gate-input" type="password" id="gate-password" placeholder="Admin password" />
+
+    <label class="gate-label">GitHub Token</label>
+    <input class="gate-input" type="password" id="gate-token" placeholder="ghp_..." onkeydown="if(event.key==='Enter')checkPassword()" />
+    <div class="gate-hint">Your GitHub Personal Access Token. This is never saved anywhere — it only lives in your browser for this session.</div>
+
     <button class="gate-btn" onclick="checkPassword()">Unlock</button>
     <div class="gate-error" id="gate-error"></div>
   </div>
 </div>
 
-<!-- ── Publish modal ── -->
+<!-- Publish modal -->
 <div id="publish-modal" class="hidden">
   <div class="modal-box">
     <div class="modal-title">Publish changes to live site</div>
-    <div class="modal-sub">This will update <code>data.json</code> in the GitHub repo and trigger an automatic rebuild. The site will be live in ~2 minutes.</div>
+    <div class="modal-sub">This will update <code>data.json</code> in GitHub and trigger an automatic rebuild. The site will be live in ~2 minutes.</div>
     <div class="form-row">
       <label>Commit message (optional)</label>
       <input type="text" id="commit-message" placeholder="e.g. Added new device: XYZ" />
@@ -293,13 +178,11 @@
   </div>
 </div>
 
-<!-- ── Top bar ── -->
+<!-- Top bar -->
 <div class="topbar">
-  <div class="topbar-left">
-    <div>
-      <div class="topbar-logo">Tech Immersion</div>
-      <div class="topbar-sub">Data Admin</div>
-    </div>
+  <div>
+    <div class="topbar-logo">Tech Immersion</div>
+    <div class="topbar-sub">Data Admin</div>
   </div>
   <div class="topbar-actions">
     <button class="btn btn-ghost" onclick="exportJSON()">
@@ -339,8 +222,7 @@
       <div class="section-header">
         <div><div class="section-title">Devices</div><div class="section-desc">Add, edit, or remove devices shown in the flowchart.</div></div>
         <button class="btn btn-success" onclick="openAddDevice()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          Add device
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add device
         </button>
       </div>
       <div class="add-card" id="add-device-form">
@@ -362,18 +244,13 @@
       <div class="section-header">
         <div><div class="section-title">Indications</div><div class="section-desc">Each indication maps to one or more devices.</div></div>
         <button class="btn btn-success" onclick="openAddIndication()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          Add indication
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add indication
         </button>
       </div>
       <div class="add-card" id="add-indication-form">
         <div class="form-row"><label>Indication name *</label><input type="text" id="new-indication-name" placeholder="e.g. Balance" /></div>
-        <div class="form-row">
-          <label>Devices for this indication</label>
-          <div class="multi-select" id="new-indication-devices">
-            <div class="multi-select-search"><input type="text" placeholder="Search devices…" oninput="filterMS(this,'new-indication-devices')" /></div>
-            <div class="multi-select-list" id="new-indication-devices-list"></div>
-          </div>
+        <div class="form-row"><label>Devices for this indication</label>
+          <div class="multi-select"><div class="multi-select-search"><input type="text" placeholder="Search devices…" oninput="filterMS(this,'new-indication-devices')" /></div><div class="multi-select-list" id="new-indication-devices-list"></div></div>
         </div>
         <div class="edit-form-actions">
           <button class="btn btn-success" onclick="saveNewIndication()">Add indication</button>
@@ -388,8 +265,7 @@
       <div class="section-header">
         <div><div class="section-title">Contraindications</div><div class="section-desc">The master list. Severity per device is set in Relationships.</div></div>
         <button class="btn btn-success" onclick="openAddContra()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          Add contraindication
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add contraindication
         </button>
       </div>
       <div class="add-card" id="add-contra-form">
@@ -416,39 +292,38 @@
 <input type="file" id="import-input" accept=".json" style="display:none" onchange="handleImport(event)" />
 
 <script>
-// ═══════════════════════════════════════════════════
-// CONFIG — update these before deploying
-// ═══════════════════════════════════════════════════
-const CONFIG = {
-  password: "TechImmersion2026",          // ← change this to your chosen password
-  githubToken: "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",   // ← paste your GitHub Personal Access Token here
-  repoOwner: "richarai9",
-  repoName: "Tech-Immersion-Flowchart",
-  filePath: "data.json",
-  branch: "main",
-};
+// ── Config — only the password lives here ─────────────────────────────────
+const ADMIN_PASSWORD = "TechImmersion2026"; // 
+const REPO_OWNER     = "richarai9";
+const REPO_NAME      = "Tech-Immersion-Flowchart";
+const FILE_PATH      = "data.json";
+const BRANCH         = "main";
 
-// ═══════════════════════════════════════════════════
-// PASSWORD GATE
-// ═══════════════════════════════════════════════════
+// token is entered at login and stored only in memory
+let githubToken = "";
+
+// ── Gate ─────────────────────────────────────────────────────────────────
 function checkPassword() {
-  const val = document.getElementById('gate-input').value;
-  if (val === CONFIG.password) {
-    document.getElementById('password-gate').classList.add('hidden');
-    loadLatestData();
-  } else {
-    document.getElementById('gate-error').textContent = 'Incorrect password. Try again.';
-    document.getElementById('gate-input').value = '';
-    document.getElementById('gate-input').focus();
+  const pw  = document.getElementById('gate-password').value;
+  const tok = document.getElementById('gate-token').value.trim();
+  if (pw !== ADMIN_PASSWORD) {
+    document.getElementById('gate-error').textContent = 'Incorrect password.';
+    document.getElementById('gate-password').value = '';
+    return;
   }
+  if (!tok.startsWith('ghp_') && !tok.startsWith('github_pat_')) {
+    document.getElementById('gate-error').textContent = 'Token looks invalid — it should start with ghp_';
+    return;
+  }
+  githubToken = tok;
+  document.getElementById('password-gate').classList.add('hidden');
+  loadLatestData();
 }
 
-// ═══════════════════════════════════════════════════
-// LOAD LATEST DATA FROM GITHUB ON LOGIN
-// ═══════════════════════════════════════════════════
+// ── Load latest data.json from GitHub ────────────────────────────────────
 async function loadLatestData() {
   try {
-    const url = `https://raw.githubusercontent.com/${CONFIG.repoOwner}/${CONFIG.repoName}/${CONFIG.branch}/${CONFIG.filePath}?t=${Date.now()}`;
+    const url = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/${FILE_PATH}?t=${Date.now()}`;
     const res = await fetch(url);
     if (res.ok) {
       const data = await res.json();
@@ -456,91 +331,67 @@ async function loadLatestData() {
         state = data;
         if (!state.deviceProfiles) state.deviceProfiles = {};
         renderAll();
-        toast('Loaded latest data from GitHub');
+        toast('Loaded latest data from GitHub ✓');
         return;
       }
     }
   } catch(e) {}
-  // fall back to seed data
   state = JSON.parse(JSON.stringify(SEED));
   renderAll();
+  toast('Using default data (could not reach GitHub)');
 }
 
-// ═══════════════════════════════════════════════════
-// PUBLISH TO GITHUB
-// ═══════════════════════════════════════════════════
+// ── Publish ───────────────────────────────────────────────────────────────
 function openPublishModal() {
   document.getElementById('publish-modal').classList.remove('hidden');
   document.getElementById('publish-status').className = 'publish-status';
-  document.getElementById('publish-status').textContent = '';
   document.getElementById('commit-message').value = '';
   document.getElementById('publish-confirm-btn').disabled = false;
+  document.getElementById('publish-confirm-btn').textContent = 'Publish now';
 }
-
-function closePublishModal() {
-  document.getElementById('publish-modal').classList.add('hidden');
-}
+function closePublishModal() { document.getElementById('publish-modal').classList.add('hidden'); }
 
 async function doPublish() {
   const btn = document.getElementById('publish-confirm-btn');
   const statusEl = document.getElementById('publish-status');
   const msg = document.getElementById('commit-message').value.trim() || 'Update data.json via admin tool';
-
   btn.disabled = true;
   statusEl.className = 'publish-status loading show';
   statusEl.textContent = '⏳ Publishing… please wait.';
-
   try {
     const content = JSON.stringify(state, null, 2);
     const encoded = btoa(unescape(encodeURIComponent(content)));
-
-    // get current file SHA (needed for update)
     const headers = {
-      'Authorization': `Bearer ${CONFIG.githubToken}`,
+      'Authorization': `Bearer ${githubToken}`,
       'Accept': 'application/vnd.github+json',
       'X-GitHub-Api-Version': '2022-11-28',
     };
-
-    const getRes = await fetch(
-      `https://api.github.com/repos/${CONFIG.repoOwner}/${CONFIG.repoName}/contents/${CONFIG.filePath}`,
-      { headers }
-    );
-
-    let sha = undefined;
-    if (getRes.ok) {
-      const fileData = await getRes.json();
-      sha = fileData.sha;
-    }
-
-    const putRes = await fetch(
-      `https://api.github.com/repos/${CONFIG.repoOwner}/${CONFIG.repoName}/contents/${CONFIG.filePath}`,
-      {
-        method: 'PUT',
-        headers: { ...headers, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: msg, content: encoded, branch: CONFIG.branch, ...(sha ? { sha } : {}) }),
-      }
-    );
-
+    const getRes = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, { headers });
+    let sha;
+    if (getRes.ok) { sha = (await getRes.json()).sha; }
+    const putRes = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
+      method: 'PUT',
+      headers: { ...headers, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: msg, content: encoded, branch: BRANCH, ...(sha ? { sha } : {}) }),
+    });
     if (putRes.ok) {
       statusEl.className = 'publish-status success show';
-      statusEl.textContent = '✅ Published! GitHub Actions is rebuilding the site now. It will be live in ~2 minutes.';
+      statusEl.textContent = '✅ Published! The site will update in ~2 minutes.';
       btn.textContent = 'Done!';
     } else {
       const err = await putRes.json();
       throw new Error(err.message || 'GitHub API error');
     }
-  } catch (e) {
+  } catch(e) {
     statusEl.className = 'publish-status error show';
-    statusEl.textContent = `❌ Error: ${e.message}. Check that your GitHub token is set correctly in the config.`;
+    statusEl.textContent = `❌ Error: ${e.message}`;
     btn.disabled = false;
+    btn.textContent = 'Publish now';
   }
 }
 
-// ═══════════════════════════════════════════════════
-// STATE + SEED
-// ═══════════════════════════════════════════════════
+// ── State + Seed ──────────────────────────────────────────────────────────
 let state = { devices: [], indications: [], contraindications: [], deviceProfiles: {} };
-
 const SEED = {
   devices: [
     { name: "AIH (Intermittent Hypoxia)", description: "Intermittent hypoxia delivered to enhance respiratory and possibly neurologic function prior to therapy.", details: "" },
@@ -628,18 +479,13 @@ const SEED = {
   }
 };
 
-// ═══════════════════════════════════════════════════
-// RENDER
-// ═══════════════════════════════════════════════════
-function renderAll() {
-  renderDevices(); renderIndications(); renderContraindications(); renderRelationships(); updateBadges();
-}
+// ── Render ────────────────────────────────────────────────────────────────
+function renderAll() { renderDevices(); renderIndications(); renderContraindications(); renderRelationships(); updateBadges(); }
 function updateBadges() {
   document.getElementById('badge-devices').textContent = state.devices.length;
   document.getElementById('badge-indications').textContent = state.indications.length;
   document.getElementById('badge-contraindications').textContent = state.contraindications.length;
-  const r = Object.values(state.deviceProfiles).reduce((s,p)=>s+p.absoluteContra.length+p.cautionaryContra.length,0);
-  document.getElementById('badge-relationships').textContent = r;
+  document.getElementById('badge-relationships').textContent = Object.values(state.deviceProfiles).reduce((s,p)=>s+p.absoluteContra.length+p.cautionaryContra.length,0);
 }
 function switchTab(tab) {
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
@@ -647,13 +493,16 @@ function switchTab(tab) {
   document.getElementById('panel-'+tab).classList.add('active');
   document.getElementById('nav-'+tab).classList.add('active');
 }
+function sortedBy(arr, key) { return [...arr].sort((a,b)=>a[key].localeCompare(b[key])); }
 
 // DEVICES
 function renderDevices() {
   const el = document.getElementById('devices-list');
-  if (!state.devices.length) { el.innerHTML='<div class="empty"><div class="empty-icon">📱</div>No devices yet.</div>'; return; }
-  el.innerHTML = state.devices.map((d,i)=>`
-    <div class="card">
+  const sorted = sortedBy(state.devices, 'name');
+  if (!sorted.length) { el.innerHTML='<div class="empty"><div class="empty-icon">📱</div>No devices yet.</div>'; return; }
+  el.innerHTML = sorted.map((d,i)=>{
+    const realIdx = state.devices.indexOf(d);
+    return `<div class="card">
       <div class="card-row">
         <div class="card-body">
           <div class="card-name">${esc(d.name)}</div>
@@ -661,22 +510,23 @@ function renderDevices() {
           <div class="card-desc">${esc(d.description)}</div>
         </div>
         <div class="card-actions">
-          <button class="btn btn-sm btn-ghost-dark" onclick="toggleDeviceEdit(${i})">Edit</button>
-          <button class="btn btn-sm btn-danger" onclick="deleteDevice(${i})">Delete</button>
+          <button class="btn btn-sm btn-ghost-dark" onclick="toggleDeviceEdit(${realIdx})">Edit</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteDevice(${realIdx})">Delete</button>
         </div>
       </div>
-      <div class="edit-form" id="device-edit-${i}" style="display:none">
+      <div class="edit-form" id="device-edit-${realIdx}" style="display:none">
         <div class="form-grid">
-          <div class="form-row"><label>Device name</label><input type="text" id="dev-name-${i}" value="${esc(d.name)}" /></div>
-          <div class="form-row"><label>Details (optional)</label><input type="text" id="dev-details-${i}" value="${esc(d.details||'')}" /></div>
+          <div class="form-row"><label>Device name</label><input type="text" id="dev-name-${realIdx}" value="${esc(d.name)}" /></div>
+          <div class="form-row"><label>Details (optional)</label><input type="text" id="dev-details-${realIdx}" value="${esc(d.details||'')}" /></div>
         </div>
-        <div class="form-row"><label>Description</label><textarea id="dev-desc-${i}">${esc(d.description)}</textarea></div>
+        <div class="form-row"><label>Description</label><textarea id="dev-desc-${realIdx}">${esc(d.description)}</textarea></div>
         <div class="edit-form-actions">
-          <button class="btn btn-success" onclick="saveDevice(${i})">Save changes</button>
-          <button class="btn btn-ghost-dark" onclick="toggleDeviceEdit(${i})">Cancel</button>
+          <button class="btn btn-success" onclick="saveDevice(${realIdx})">Save changes</button>
+          <button class="btn btn-ghost-dark" onclick="toggleDeviceEdit(${realIdx})">Cancel</button>
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 function toggleDeviceEdit(i){const f=document.getElementById(`device-edit-${i}`);f.style.display=f.style.display==='none'?'block':'none';}
 function saveDevice(i){
@@ -690,8 +540,8 @@ function saveDevice(i){
   renderAll();toast('Device saved');
 }
 function deleteDevice(i){
+  if(!confirm(`Delete "${state.devices[i].name}"?`))return;
   const name=state.devices[i].name;
-  if(!confirm(`Delete "${name}"?`))return;
   state.devices.splice(i,1);
   state.indications.forEach(ind=>{ind.devices=ind.devices.filter(d=>d!==name);});
   delete state.deviceProfiles[name];
@@ -711,39 +561,42 @@ function saveNewDevice(){
 // INDICATIONS
 function renderIndications(){
   const el=document.getElementById('indications-list');
-  if(!state.indications.length){el.innerHTML='<div class="empty"><div class="empty-icon">📋</div>No indications yet.</div>';return;}
-  el.innerHTML=state.indications.map((ind,i)=>`
-    <div class="card">
+  const sorted=sortedBy(state.indications,'label');
+  if(!sorted.length){el.innerHTML='<div class="empty"><div class="empty-icon">📋</div>No indications yet.</div>';return;}
+  el.innerHTML=sorted.map((ind)=>{
+    const realIdx=state.indications.indexOf(ind);
+    return`<div class="card">
       <div class="card-row">
         <div class="card-body">
           <div class="card-name">${esc(ind.label)}</div>
-          <div class="tags">${ind.devices.map(d=>`<span class="tag tag-blue">${esc(d)}</span>`).join('')||'<span class="tag tag-gray">No devices</span>'}</div>
+          <div class="tags">${sortedBy(ind.devices.map(d=>({name:d})),'name').map(d=>`<span class="tag tag-blue">${esc(d.name)}</span>`).join('')||'<span class="tag tag-gray">No devices</span>'}</div>
         </div>
         <div class="card-actions">
-          <button class="btn btn-sm btn-ghost-dark" onclick="toggleIndEdit(${i})">Edit</button>
-          <button class="btn btn-sm btn-danger" onclick="deleteIndication(${i})">Delete</button>
+          <button class="btn btn-sm btn-ghost-dark" onclick="toggleIndEdit(${realIdx})">Edit</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteIndication(${realIdx})">Delete</button>
         </div>
       </div>
-      <div class="edit-form" id="ind-edit-${i}" style="display:none">
-        <div class="form-row"><label>Indication name</label><input type="text" id="ind-name-${i}" value="${esc(ind.label)}" /></div>
+      <div class="edit-form" id="ind-edit-${realIdx}" style="display:none">
+        <div class="form-row"><label>Indication name</label><input type="text" id="ind-name-${realIdx}" value="${esc(ind.label)}" /></div>
         <div class="form-row"><label>Devices</label>
-          <div class="multi-select" id="ms-ind-${i}">
-            <div class="multi-select-search"><input type="text" placeholder="Search devices…" oninput="filterMS(this,'ms-ind-${i}')" /></div>
-            <div class="multi-select-list">${buildMSItems(`ms-ind-${i}`,state.devices.map(d=>d.name),ind.devices)}</div>
+          <div class="multi-select">
+            <div class="multi-select-search"><input type="text" placeholder="Search devices…" oninput="filterMS(this,'ms-ind-${realIdx}')" /></div>
+            <div class="multi-select-list">${buildMSItems(`ms-ind-${realIdx}`,sortedBy(state.devices,'name').map(d=>d.name),ind.devices)}</div>
           </div>
         </div>
         <div class="edit-form-actions">
-          <button class="btn btn-success" onclick="saveIndication(${i})">Save changes</button>
-          <button class="btn btn-ghost-dark" onclick="toggleIndEdit(${i})">Cancel</button>
+          <button class="btn btn-success" onclick="saveIndication(${realIdx})">Save changes</button>
+          <button class="btn btn-ghost-dark" onclick="toggleIndEdit(${realIdx})">Cancel</button>
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
   populateNewIndicationDevices();
 }
 function buildMSItems(groupId,allOptions,selected){return allOptions.map(opt=>`<label class="ms-item"><input type="checkbox" data-group="${groupId}" data-val="${esc(opt)}" ${selected.includes(opt)?'checked':''} /><label>${esc(opt)}</label></label>`).join('')||'<div class="ms-empty">No devices available</div>';}
 function getChecked(groupId){return[...document.querySelectorAll(`[data-group="${groupId}"]:checked`)].map(cb=>cb.dataset.val);}
-function filterMS(input,groupId){const q=input.value.toLowerCase();document.querySelectorAll(`[data-group="${groupId}"]`).forEach(cb=>{cb.closest('.ms-item').style.display=cb.dataset.val.toLowerCase().includes(q)?'':('none');});}
-function populateNewIndicationDevices(){document.getElementById('new-indication-devices-list').innerHTML=buildMSItems('new-indication-devices',state.devices.map(d=>d.name),[]);}
+function filterMS(input,groupId){const q=input.value.toLowerCase();document.querySelectorAll(`[data-group="${groupId}"]`).forEach(cb=>{cb.closest('.ms-item').style.display=cb.dataset.val.toLowerCase().includes(q)?'':'none';});}
+function populateNewIndicationDevices(){document.getElementById('new-indication-devices-list').innerHTML=buildMSItems('new-indication-devices',sortedBy(state.devices,'name').map(d=>d.name),[]);}
 function toggleIndEdit(i){const f=document.getElementById(`ind-edit-${i}`);f.style.display=f.style.display==='none'?'block':'none';}
 function saveIndication(i){
   const label=document.getElementById(`ind-name-${i}`).value.trim();
@@ -764,24 +617,27 @@ function saveNewIndication(){
 // CONTRAINDICATIONS
 function renderContraindications(){
   const el=document.getElementById('contraindications-list');
-  if(!state.contraindications.length){el.innerHTML='<div class="empty"><div class="empty-icon">🚫</div>No contraindications yet.</div>';return;}
-  el.innerHTML=state.contraindications.map((c,i)=>`
-    <div class="card">
+  const sorted=sortedBy(state.contraindications,'label');
+  if(!sorted.length){el.innerHTML='<div class="empty"><div class="empty-icon">🚫</div>No contraindications yet.</div>';return;}
+  el.innerHTML=sorted.map((c)=>{
+    const realIdx=state.contraindications.indexOf(c);
+    return`<div class="card">
       <div class="card-row">
         <div class="card-body"><div class="card-name">${esc(c.label)}</div></div>
         <div class="card-actions">
-          <button class="btn btn-sm btn-ghost-dark" onclick="editContra(${i})">Edit</button>
-          <button class="btn btn-sm btn-danger" onclick="deleteContra(${i})">Delete</button>
+          <button class="btn btn-sm btn-ghost-dark" onclick="editContra(${realIdx})">Edit</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteContra(${realIdx})">Delete</button>
         </div>
       </div>
-      <div class="edit-form" id="contra-edit-${i}" style="display:none">
-        <div class="form-row"><label>Label</label><input type="text" id="contra-label-${i}" value="${esc(c.label)}" /></div>
+      <div class="edit-form" id="contra-edit-${realIdx}" style="display:none">
+        <div class="form-row"><label>Label</label><input type="text" id="contra-label-${realIdx}" value="${esc(c.label)}" /></div>
         <div class="edit-form-actions">
-          <button class="btn btn-success" onclick="saveContra(${i})">Save</button>
-          <button class="btn btn-ghost-dark" onclick="editContra(${i})">Cancel</button>
+          <button class="btn btn-success" onclick="saveContra(${realIdx})">Save</button>
+          <button class="btn btn-ghost-dark" onclick="editContra(${realIdx})">Cancel</button>
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 function editContra(i){const f=document.getElementById(`contra-edit-${i}`);f.style.display=f.style.display==='none'?'block':'none';}
 function saveContra(i){
@@ -808,9 +664,11 @@ function saveNewContra(){
 // RELATIONSHIPS
 function renderRelationships(){
   const el=document.getElementById('relationships-list');
-  if(!state.devices.length){el.innerHTML='<div class="empty"><div class="empty-icon">🔗</div>Add devices first.</div>';return;}
-  const contraLabels=state.contraindications.map(c=>c.label);
-  el.innerHTML=state.devices.map((dev,di)=>{
+  const sorted=sortedBy(state.devices,'name');
+  if(!sorted.length){el.innerHTML='<div class="empty"><div class="empty-icon">🔗</div>Add devices first.</div>';return;}
+  const contraLabels=sortedBy(state.contraindications,'label').map(c=>c.label);
+  el.innerHTML=sorted.map((dev)=>{
+    const realIdx=state.devices.indexOf(dev);
     const p=state.deviceProfiles[dev.name]||{absoluteContra:[],cautionaryContra:[]};
     return`<div class="card">
       <div class="card-row">
@@ -822,38 +680,37 @@ function renderRelationships(){
             ${!p.absoluteContra.length&&!p.cautionaryContra.length?'<span class="tag tag-gray">None set</span>':''}
           </div>
         </div>
-        <button class="btn btn-sm btn-ghost-dark" onclick="toggleRelEdit(${di})">Edit</button>
+        <button class="btn btn-sm btn-ghost-dark" onclick="toggleRelEdit(${realIdx})">Edit</button>
       </div>
-      <div class="edit-form" id="rel-edit-${di}" style="display:none">
+      <div class="edit-form" id="rel-edit-${realIdx}" style="display:none">
         <div class="contra-groups">
           <div class="contra-group-abs">
             <div class="contra-group-label">🔴 Absolute</div>
             <div class="multi-select" style="border-radius:0 0 var(--radius-sm) var(--radius-sm);border-top:none">
-              <div class="multi-select-search" style="border-radius:0"><input type="text" placeholder="Search…" oninput="filterMS(this,'rel-abs-${di}')" /></div>
-              <div class="multi-select-list">${contraLabels.map(label=>`<label class="ms-item"><input type="checkbox" data-group="rel-abs-${di}" data-val="${esc(label)}" ${p.absoluteContra.includes(label)?'checked':''} onchange="syncExclusive(this,'rel-cau-${di}','${esc(label)}')" /><label>${esc(label)}</label></label>`).join('')}</div>
+              <div class="multi-select-search" style="border-radius:0"><input type="text" placeholder="Search…" oninput="filterMS(this,'rel-abs-${realIdx}')" /></div>
+              <div class="multi-select-list">${contraLabels.map(label=>`<label class="ms-item"><input type="checkbox" data-group="rel-abs-${realIdx}" data-val="${esc(label)}" ${p.absoluteContra.includes(label)?'checked':''} onchange="syncExclusive(this,'rel-cau-${realIdx}','${esc(label)}')" /><label>${esc(label)}</label></label>`).join('')}</div>
             </div>
           </div>
           <div class="contra-group-cau">
             <div class="contra-group-label">🟠 Precautionary</div>
             <div class="multi-select" style="border-radius:0 0 var(--radius-sm) var(--radius-sm);border-top:none">
-              <div class="multi-select-search" style="border-radius:0"><input type="text" placeholder="Search…" oninput="filterMS(this,'rel-cau-${di}')" /></div>
-              <div class="multi-select-list">${contraLabels.map(label=>`<label class="ms-item"><input type="checkbox" data-group="rel-cau-${di}" data-val="${esc(label)}" ${p.cautionaryContra.includes(label)?'checked':''} onchange="syncExclusive(this,'rel-abs-${di}','${esc(label)}')" /><label>${esc(label)}</label></label>`).join('')}</div>
+              <div class="multi-select-search" style="border-radius:0"><input type="text" placeholder="Search…" oninput="filterMS(this,'rel-cau-${realIdx}')" /></div>
+              <div class="multi-select-list">${contraLabels.map(label=>`<label class="ms-item"><input type="checkbox" data-group="rel-cau-${realIdx}" data-val="${esc(label)}" ${p.cautionaryContra.includes(label)?'checked':''} onchange="syncExclusive(this,'rel-abs-${realIdx}','${esc(label)}')" /><label>${esc(label)}</label></label>`).join('')}</div>
             </div>
           </div>
         </div>
         <div class="edit-form-actions" style="margin-top:12px">
-          <button class="btn btn-success" onclick="saveRelationship(${di})">Save</button>
-          <button class="btn btn-ghost-dark" onclick="toggleRelEdit(${di})">Cancel</button>
+          <button class="btn btn-success" onclick="saveRelationship(${realIdx})">Save</button>
+          <button class="btn btn-ghost-dark" onclick="toggleRelEdit(${realIdx})">Cancel</button>
         </div>
       </div>
     </div>`;
   }).join('');
 }
 function syncExclusive(cb,otherGroup,label){if(cb.checked){const o=document.querySelector(`[data-group="${otherGroup}"][data-val="${label}"]`);if(o)o.checked=false;}}
-function toggleRelEdit(di){const f=document.getElementById(`rel-edit-${di}`);f.style.display=f.style.display==='none'?'block':'none';}
-function saveRelationship(di){
-  const devName=state.devices[di].name;
-  state.deviceProfiles[devName]={absoluteContra:getChecked(`rel-abs-${di}`),cautionaryContra:getChecked(`rel-cau-${di}`)};
+function toggleRelEdit(i){const f=document.getElementById(`rel-edit-${i}`);f.style.display=f.style.display==='none'?'block':'none';}
+function saveRelationship(i){
+  state.deviceProfiles[state.devices[i].name]={absoluteContra:getChecked(`rel-abs-${i}`),cautionaryContra:getChecked(`rel-cau-${i}`)};
   renderAll();toast('Relationships saved');
 }
 
@@ -863,20 +720,19 @@ function exportJSON(){
   const url=URL.createObjectURL(blob);const a=document.createElement('a');
   a.href=url;a.download='data.json';a.click();URL.revokeObjectURL(url);toast('Downloaded!');
 }
-function handleImport(event){
-  const file=event.target.files[0];if(!file)return;
-  const reader=new FileReader();
-  reader.onload=(e)=>{try{const d=JSON.parse(e.target.result);if(!d.devices||!d.indications||!d.contraindications)return toast('Invalid format');state=d;if(!state.deviceProfiles)state.deviceProfiles={};renderAll();toast('Imported!');}catch{toast('Could not parse file');}};
-  reader.readAsText(file);event.target.value='';
+function handleImport(e){
+  const file=e.target.files[0];if(!file)return;
+  const r=new FileReader();
+  r.onload=(ev)=>{try{const d=JSON.parse(ev.target.result);if(!d.devices||!d.indications||!d.contraindications)return toast('Invalid format');state=d;if(!state.deviceProfiles)state.deviceProfiles={};renderAll();toast('Imported!');}catch{toast('Could not parse file');}};
+  r.readAsText(file);e.target.value='';
 }
 
-// UTILITIES
-function esc(str){return String(str??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+// UTILS
+function esc(s){return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 let toastTimer;
 function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2800);}
 
-// focus password input on load
-document.getElementById('gate-input').focus();
+document.getElementById('gate-password').focus();
 </script>
 </body>
 </html>
