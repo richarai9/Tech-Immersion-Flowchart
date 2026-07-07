@@ -114,6 +114,11 @@
       "name": "Zeen",
       "description": "TBD",
       "details": ""
+    },
+    {
+      "name": "Anti-Gravity Treadmill",
+      "description": "TBD",
+      "details": ""
     }
   ],
   "indications": [
@@ -302,9 +307,6 @@
       "label": "Cardiopulmonary Disease"
     },
     {
-      "label": "Cognitive Impairment"
-    },
-    {
       "label": "Contractures"
     },
     {
@@ -312,9 +314,6 @@
     },
     {
       "label": "DVT"
-    },
-    {
-      "label": "Hypertonicity"
     },
     {
       "label": "Hypertonicity, MAS > 3"
@@ -327,9 +326,6 @@
     },
     {
       "label": "Infectious Disease / Fever"
-    },
-    {
-      "label": "Leg Length Discrepancy"
     },
     {
       "label": "Metal Implants"
@@ -350,22 +346,10 @@
       "label": "Pregnancy"
     },
     {
-      "label": "Rashes or Skin Disease"
-    },
-    {
-      "label": "Seizure Disorder"
-    },
-    {
-      "label": "Seizures"
-    },
-    {
       "label": "Severe Cognitive Impairment"
     },
     {
       "label": "Significant Leg Length Discrepancy"
-    },
-    {
-      "label": "Skin Infection"
     },
     {
       "label": "Sleep Apnea"
@@ -399,6 +383,24 @@
     },
     {
       "label": "Weight > 275 lbs"
+    },
+    {
+      "label": "Impaired Skin Integrity"
+    },
+    {
+      "label": "History of Seizures"
+    },
+    {
+      "label": "Amputation"
+    },
+    {
+      "label": "Severe Edema"
+    },
+    {
+      "label": "Shunt"
+    },
+    {
+      "label": "Brain Implant"
     }
   ],
   "deviceProfiles": {
@@ -409,8 +411,10 @@
       ],
       "cautionaryContra": [
         "Autonomic Instability",
+        "Brain Implant",
         "Cancer",
         "Cardiac Conditions",
+        "Shunt",
         "Sleep Apnea",
         "Stroke",
         "TBI",
@@ -420,7 +424,6 @@
     "ARWell Pro": {
       "absoluteContra": [],
       "cautionaryContra": [
-        "Seizure Disorder",
         "Severe Cognitive Impairment",
         "Vision Impairment"
       ]
@@ -431,8 +434,11 @@
     },
     "Biomotum": {
       "absoluteContra": [
+        "Amputation",
         "Contractures",
-        "Hypertonicity"
+        "Weight > 220 lbs",
+        "Weight > 250 lbs",
+        "Weight > 275 lbs"
       ],
       "cautionaryContra": []
     },
@@ -440,7 +446,8 @@
       "absoluteContra": [
         "Craniectomy",
         "Implanted Electronic Devices",
-        "Seizures"
+        "Shunt",
+        "Uncontrolled Seizures"
       ],
       "cautionaryContra": [
         "Cancer"
@@ -448,8 +455,7 @@
     },
     "Barrett Upper-Extremity Robot Trainer (BURT)": {
       "absoluteContra": [
-        "Contractures",
-        "Hypertonicity"
+        "Contractures"
       ],
       "cautionaryContra": [
         "Open Wounds",
@@ -459,14 +465,15 @@
     "C-Brace": {
       "absoluteContra": [
         "Contractures",
-        "Hypertonicity",
         "Weight > 275 lbs"
       ],
       "cautionaryContra": [
         "Absent Trunk Control",
-        "Cognitive Impairment",
-        "Leg Length Discrepancy",
-        "Open Wounds"
+        "Hypertonicity, MAS > 3",
+        "Open Wounds",
+        "Severe Edema",
+        "Significant Leg Length Discrepancy",
+        "Uncontrolled Seizures"
       ]
     },
     "Cadence Shoe": {
@@ -475,14 +482,18 @@
     },
     "Ekso GT/NR": {
       "absoluteContra": [
-        "Hypertonicity, MAS > 3",
-        "Weight > 220 lbs"
+        "Amputation",
+        "Weight > 220 lbs",
+        "Weight > 250 lbs",
+        "Weight > 275 lbs"
       ],
       "cautionaryContra": [
         "Contractures",
+        "Hypertonicity, MAS > 3",
         "Open Wounds",
         "Osteoporosis",
         "Pregnancy",
+        "Severe Edema",
         "Significant Leg Length Discrepancy"
       ]
     },
@@ -493,6 +504,8 @@
       "cautionaryContra": [
         "Cancer",
         "Cardiac Conditions",
+        "Impaired Skin Integrity",
+        "Infectious Disease / Fever",
         "Metal Implants",
         "Open Wounds",
         "Pregnancy"
@@ -500,8 +513,7 @@
     },
     "Gloreha Sinfonia": {
       "absoluteContra": [
-        "Contractures",
-        "Hypertonicity"
+        "Contractures"
       ],
       "cautionaryContra": [
         "Open Wounds",
@@ -512,14 +524,16 @@
       "absoluteContra": [
         "Contractures"
       ],
-      "cautionaryContra": []
+      "cautionaryContra": [
+        "Hypertonicity, MAS > 3",
+        "Impaired Skin Integrity",
+        "Osteoporosis",
+        "Severe Edema"
+      ]
     },
     "Kinesix VR": {
-      "absoluteContra": [
-        "Seizures"
-      ],
+      "absoluteContra": [],
       "cautionaryContra": [
-        "Cognitive Impairment",
         "Vision Impairment"
       ]
     },
@@ -536,37 +550,51 @@
       "absoluteContra": [
         "Implanted Electronic Devices",
         "Open Wounds",
-        "Pregnancy",
-        "Skin Infection",
         "Ventilator / Electronic Life Support Devices"
       ],
       "cautionaryContra": [
         "Cancer",
         "Cardiac Conditions",
+        "Impaired Skin Integrity",
         "Infectious Disease / Fever",
-        "Rashes or Skin Disease",
+        "Pregnancy",
+        "Severe Edema",
+        "Shunt",
         "Uncontrolled Seizures"
       ]
     },
     "Powered Knee Ankle Foot Orthosis": {
       "absoluteContra": [
-        "Contractures",
-        "Hypertonicity"
+        "Amputation"
       ],
       "cautionaryContra": [
         "Absent Trunk Control",
-        "Cognitive Impairment",
-        "Leg Length Discrepancy",
-        "Open Wounds"
+        "Contractures",
+        "Hypertonicity, MAS > 3",
+        "Impaired Skin Integrity",
+        "Open Wounds",
+        "Osteoporosis",
+        "Pregnancy",
+        "Severe Edema",
+        "Significant Leg Length Discrepancy",
+        "Uncontrolled Seizures"
       ]
     },
     "ReWalk Restore": {
       "absoluteContra": [
-        "Contractures",
+        "Amputation",
         "DVT",
         "Urethane Allergy"
       ],
-      "cautionaryContra": []
+      "cautionaryContra": [
+        "Contractures",
+        "Impaired Skin Integrity",
+        "Open Wounds",
+        "Pregnancy",
+        "Severe Edema",
+        "Significant Leg Length Discrepancy",
+        "Uncontrolled Seizures"
+      ]
     },
     "ReWalk by Lifeward": {
       "absoluteContra": [
@@ -583,12 +611,19 @@
     },
     "Transcutaneous Spinal Cord Stimulation": {
       "absoluteContra": [
-        "Implanted Electronic Devices",
         "Pregnancy"
       ],
       "cautionaryContra": [
+        "Brain Implant",
         "Cancer",
         "Cardiac Conditions",
+        "History of Seizures",
+        "Impaired Skin Integrity",
+        "Implanted Electronic Devices",
+        "Infectious Disease / Fever",
+        "Metal Implants",
+        "Open Wounds",
+        "Shunt",
         "Uncontrolled Seizures"
       ]
     },
@@ -604,31 +639,62 @@
     },
     "WIM": {
       "absoluteContra": [
-        "Contractures"
+        "Amputation"
       ],
-      "cautionaryContra": []
+      "cautionaryContra": [
+        "Contractures",
+        "Hypertonicity, MAS > 3",
+        "Impaired Skin Integrity",
+        "Open Wounds",
+        "Pregnancy",
+        "Severe Edema",
+        "Significant Leg Length Discrepancy",
+        "Uncontrolled Seizures"
+      ]
     },
     "Zeen": {
       "absoluteContra": [
+        "Amputation",
         "Weight > 250 lbs"
       ],
       "cautionaryContra": [
         "Absent Trunk Control",
-        "Cognitive Impairment",
-        "Osteoporosis"
+        "Osteoporosis",
+        "Pregnancy",
+        "Significant Leg Length Discrepancy",
+        "Uncontrolled Seizures"
       ]
     },
     "Indego by Ekso": {
       "absoluteContra": [
-        "Hypertonicity, MAS > 3"
+        "Hypertonicity, MAS > 3",
+        "Weight > 220 lbs",
+        "Weight > 250 lbs",
+        "Weight > 275 lbs"
       ],
       "cautionaryContra": [
         "Absent Trunk Control",
+        "Amputation",
         "Contractures",
+        "Impaired Skin Integrity",
         "Open Wounds",
         "Osteoporosis",
         "Pregnancy",
-        "Severe Cognitive Impairment"
+        "Severe Cognitive Impairment",
+        "Significant Leg Length Discrepancy",
+        "Uncontrolled Seizures",
+        "Ventilator / Electronic Life Support Devices"
+      ]
+    },
+    "Anti-Gravity Treadmill": {
+      "absoluteContra": [
+        "Amputation",
+        "Autonomic Instability"
+      ],
+      "cautionaryContra": [
+        "Open Wounds",
+        "Significant Leg Length Discrepancy",
+        "Ventilator / Electronic Life Support Devices"
       ]
     }
   }
