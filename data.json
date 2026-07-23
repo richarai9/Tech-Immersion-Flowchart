@@ -119,6 +119,11 @@
       "name": "Anti-Gravity Treadmill",
       "description": "TBD",
       "details": ""
+    },
+    {
+      "name": "ZeroG",
+      "description": "Robotic body-weight support system utilized with overground ambulation.",
+      "details": ""
     }
   ],
   "indications": [
@@ -132,10 +137,11 @@
         "Hypershell X",
         "Indego by Ekso",
         "Powered Knee Ankle Foot Orthosis",
-        "ReWalk Restore",
         "ReWalk by Lifeward",
+        "ReWalk Restore",
         "WIM",
-        "Zeen"
+        "Zeen",
+        "ZeroG"
       ]
     },
     {
@@ -143,7 +149,8 @@
       "devices": [
         "ARWell Pro",
         "BalanceBelt",
-        "Kinesix VR"
+        "Kinesix VR",
+        "ZeroG"
       ]
     },
     {
@@ -183,7 +190,9 @@
         "Indego by Ekso",
         "Powered Knee Ankle Foot Orthosis",
         "ReWalk by Lifeward",
-        "Zeen"
+        "WIM",
+        "Zeen",
+        "ZeroG"
       ]
     },
     {
@@ -226,7 +235,8 @@
       "label": "Pediatrics",
       "devices": [
         "ARWell Pro",
-        "Kinesix VR"
+        "Kinesix VR",
+        "ZeroG"
       ]
     },
     {
@@ -260,10 +270,11 @@
         "Hypershell X",
         "Indego by Ekso",
         "Powered Knee Ankle Foot Orthosis",
-        "ReWalk Restore",
         "ReWalk by Lifeward",
+        "ReWalk Restore",
         "WIM",
-        "Zeen"
+        "Zeen",
+        "ZeroG"
       ]
     },
     {
@@ -401,6 +412,9 @@
     },
     {
       "label": "Brain Implant"
+    },
+    {
+      "label": "Weight > 450lbs"
     }
   ],
   "deviceProfiles": {
@@ -430,7 +444,10 @@
     },
     "BalanceBelt": {
       "absoluteContra": [],
-      "cautionaryContra": []
+      "cautionaryContra": [
+        "Pregnancy",
+        "Uncontrolled Seizures"
+      ]
     },
     "Biomotum": {
       "absoluteContra": [
@@ -695,6 +712,19 @@
         "Open Wounds",
         "Significant Leg Length Discrepancy",
         "Ventilator / Electronic Life Support Devices"
+      ]
+    },
+    "ZeroG": {
+      "absoluteContra": [
+        "Weight > 450lbs"
+      ],
+      "cautionaryContra": [
+        "Impaired Skin Integrity",
+        "Open Wounds",
+        "Osteoporosis",
+        "Pregnancy",
+        "Significant Leg Length Discrepancy",
+        "Uncontrolled Seizures"
       ]
     }
   }
