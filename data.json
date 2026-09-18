@@ -124,6 +124,16 @@
       "name": "ZeroG",
       "description": "Robotic body-weight support system utilized with overground ambulation.",
       "details": ""
+    },
+    {
+      "name": "Dnsys",
+      "description": "A powered wearable device designed to assist the knee during weight-bearing activities.",
+      "details": ""
+    },
+    {
+      "name": "COGNIShine",
+      "description": "SLP application to focus on memory, attention, executive function, word finding, problem solving and cognitive flexibility.",
+      "details": ""
     }
   ],
   "indications": [
@@ -133,6 +143,7 @@
         "Biomotum",
         "C-Brace",
         "Cadence Shoe",
+        "Dnsys",
         "Ekso GT/NR",
         "Hypershell X",
         "Indego by Ekso",
@@ -163,6 +174,7 @@
       "label": "Cognition",
       "devices": [
         "ARWell Pro",
+        "COGNIShine",
         "Kinesix VR",
         "Transcutaneous Vagal Nerve Stimulation"
       ]
@@ -186,6 +198,7 @@
       "label": "Endurance",
       "devices": [
         "C-Brace",
+        "Dnsys",
         "Ekso GT/NR",
         "Indego by Ekso",
         "Powered Knee Ankle Foot Orthosis",
@@ -256,6 +269,7 @@
     {
       "label": "Speech",
       "devices": [
+        "ARWell Pro",
         "Transcutaneous Vagal Nerve Stimulation"
       ]
     },
@@ -265,6 +279,7 @@
         "Biomotum",
         "C-Brace",
         "Cadence Shoe",
+        "Dnsys",
         "Ekso GT/NR",
         "Functional Electrical Stimulation",
         "Hypershell X",
@@ -726,6 +741,33 @@
         "Significant Leg Length Discrepancy",
         "Uncontrolled Seizures"
       ]
+    },
+    "Dnsys": {
+      "absoluteContra": [
+        "Amputation",
+        "Osteoporosis"
+      ],
+      "cautionaryContra": [
+        "Absent Trunk Control",
+        "Contractures",
+        "DVT",
+        "History of Seizures",
+        "Hypertonicity, MAS > 3",
+        "Infectious Disease / Fever",
+        "Metal Implants",
+        "Open Wounds",
+        "Pain",
+        "Pregnancy",
+        "Severe Edema",
+        "Significant Leg Length Discrepancy",
+        "Uncontrolled Hypertension",
+        "Uncontrolled Seizures",
+        "Ventilator / Electronic Life Support Devices"
+      ]
+    },
+    "COGNIShine": {
+      "absoluteContra": [],
+      "cautionaryContra": []
     }
   }
 }
