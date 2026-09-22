@@ -134,6 +134,16 @@
       "name": "COGNIShine",
       "description": "SLP application to focus on memory, attention, executive function, word finding, problem solving and cognitive flexibility.",
       "details": ""
+    },
+    {
+      "name": "MetaQuest VR",
+      "description": "Wireless virtual-reality (VR) headsets",
+      "details": ""
+    },
+    {
+      "name": "Bilingual keyboards (Hebrew/Arabic)",
+      "description": "TBD",
+      "details": ""
     }
   ],
   "indications": [
@@ -270,6 +280,9 @@
       "label": "Speech",
       "devices": [
         "ARWell Pro",
+        "Bilingual keyboards (Hebrew/Arabic)",
+        "Kinesix VR",
+        "MetaQuest VR",
         "Transcutaneous Vagal Nerve Stimulation"
       ]
     },
@@ -766,6 +779,14 @@
       ]
     },
     "COGNIShine": {
+      "absoluteContra": [],
+      "cautionaryContra": []
+    },
+    "MetaQuest VR": {
+      "absoluteContra": [],
+      "cautionaryContra": []
+    },
+    "Bilingual keyboards (Hebrew/Arabic)": {
       "absoluteContra": [],
       "cautionaryContra": []
     }
